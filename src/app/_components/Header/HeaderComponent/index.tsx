@@ -20,7 +20,7 @@ const HeaderComponent = ({ header }: { header: Header }) => {
     <nav
       className={[classes.header, noHeaderFooterUrls.includes(pathname) && classes.hide]
         .filter(Boolean)
-        .join('')}
+        .join(' ')}
     >
       <Gutter className={classes.wrap}>
         <Link href="/">
