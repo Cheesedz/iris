@@ -41,7 +41,7 @@ const RegisterForm: React.FC = () => {
       try {
         await create(data)
         if (redirect?.current) router.push(redirect.current as string)
-        else router.push('/account')
+        else router.push('/login')
       } catch (_) {
         setError('There was an error with the credentials provided. Please try again.')
       }
