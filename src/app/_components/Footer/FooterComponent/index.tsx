@@ -13,6 +13,7 @@ import { Gutter } from '../../Gutter'
 import classes from './index.module.scss'
 
 const FooterComponent = ({ footer }: { footer: Footer }) => {
+  // console.log('footer', footer)
   const pathname = usePathname()
   const navItems = footer.navItems || []
 
@@ -29,8 +30,6 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
 
             <div className={classes.sociallinks}>
               {navItems.map(item => {
-                console.log('item', item)
-                // no idea why icon is null, so src in image will be static for now
                 const icon = item?.link?.icon as Media
 
                 return (
@@ -42,7 +41,7 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
                     className={classes.socialLinkItem}
                   >
                     <Image
-                      src="/admin ui/footer/github.svg"
+                      src={icon?.url}
                       alt={item.link.label}
                       width={24}
                       height={24}
